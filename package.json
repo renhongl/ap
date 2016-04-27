@@ -1,0 +1,28 @@
+{
+  "name": "AP",
+  "version": "1.0.0",
+  "description": "A applications store for my projects",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron main.js",
+    "build": "electron-packager . qq --ignore=node_modules/electron-* --platform=win32 --arch=x64 --version=0.36.12 --overwrite --icon=./app/images/qq.ico"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "Store",
+    "Beautiful",
+    "Multifunction"
+  ],
+  "author": "LiangRenHong",
+  "license": "",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "devDependencies": {
+    "electron-prebuilt": ""
+  }
+}

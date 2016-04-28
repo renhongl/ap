@@ -13,7 +13,7 @@ var getClientIp = function (req) {
 var getRequest = function () {
     app.use(bodyParser.json()); // for parsing application/json
     app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
-    app.use(express.static('AP'));
+    app.use(express.static(__dirname.split("NM")[0] + 'AP'));
     app.get('/',root);
     app.post('/verifyLogin',verifyLogin);
     
@@ -22,7 +22,8 @@ var getRequest = function () {
 function verifyLogin(req,res){
     var email = req.body.email;
     var password = req.body.password;
-    fs.readFile('./DB/users.json',function(err,data){
+    var filePath = __dirname.split("NM")[0] + "DB/users.json";
+    fs.readFile(filePath,function(err,data){
         if(err){
             return console.log(err);
         }else{

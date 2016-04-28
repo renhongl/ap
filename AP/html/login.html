@@ -1,37 +1,51 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]> <html class="lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]> <html class="lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html lang="en">
-<!--<![endif]-->
+<!doctype html>
+<html lang="zh">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Login</title>
-    <link rel="stylesheet" href="../css/controller/login.css">
-    <!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AP</title>
+    <link rel="stylesheet" type="text/css" href="../css/controller/login.css">
 </head>
 
 <body>
-    <form class="login">
-        <p>
-            <label for="login">Email:</label>
-            <input type="text" name="login" id="login" value="name@example.com">
-        </p>
+    <div class="htmleaf-container">
+        <div class="wrapper">
+            <div class="container">
+                <h1>Welcome</h1>
 
-        <p>
-            <label for="password">Password:</label>
-            <input type="password" name="password" id="password" value="4815162342">
-        </p>
+                <form class="form">
+                    <input type="text" id="email" value="1075220132@qq.com">
+                    <input type="password" id="password" value="123456">
+                    <button type="submit" id="login-button">Login</button>
+                </form>
+            </div>
 
-        <p class="login-submit">
-            <button type="submit" class="login-button">Login</button>
-        </p>
+            <ul class="bg-bubbles">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
 
-        <p class="forgot-password"><a href="index.html">Forgot your password?</a></p>
-    </form>
+    <script>
+        window.$ = window.jQuery = require("../js/lib/jquery.js");
+        $('#login-button').click(function(event) {
+            event.preventDefault();
+            $('form').fadeOut(500);
+            $('.wrapper').addClass('form-success');
+        });
+    </script>
+    <script src="../js/controller/login.js"></script>
 </body>
 
 </html>

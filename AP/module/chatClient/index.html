@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ChatRoom</title>
+    <link rel="stylesheet" href="css/css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css/colpick.css">
+    <link rel="stylesheet" href="css/leaflet.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    
+    
+  </head>
+  <body id="body">
+    <div class="container">
+      <div id="fontSetting" class="store"></div>
+      <div id="imageStore" class="store"></div>
+      <div id="musiceSetting" class="store"></div>
+      <div id="settings"></div>
+      <div id="mapDiv"></div>
+      <div class="title">
+        <div id="appName">聊天室</div>
+        <div id="userList"><marquee id="test" scrollamount="2"></marquee></div>
+      </div>
+      <div id="alertMsg" class="alert alert-danger" role="alert" hidden="hidden"></div>
+      <div class="content">
+
+      </div>
+    </div>
+    
+    <script src="js/jquery.js" onload="window.$ = window.jQuery = module.exports;"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/colpick.js"></script>
+    <script src="js/socket.io.js"></script>
+    <script src="js/leaflet.js"></script>
+    <script src="js/jquery.colorAnimations.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script type="text/javascript">
+      var width = window.innerWidth;
+      if(width > 768){
+        $(".container").width("400");
+      }else{
+        $(".container").width("100%");
+      }
+      $.getScript("index.js",function(){
+        ChatRoom.init();
+      });
+    </script>
+  </body>
+</html>

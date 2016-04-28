@@ -4,7 +4,7 @@ var transporter = nodemailer.createTransport({
     service: '163',
     auth: {
         user: 'liang_renhong@163.com',
-        pass: '******'
+        pass: '111621116'
     }
 });
 

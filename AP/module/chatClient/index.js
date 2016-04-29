@@ -1,4 +1,7 @@
 (function(){
+  var electron = require('electron');
+  var ipc = electron.ipcRenderer;
+    
   var socket = io.connect();
   var touchThread = null;
   var clickClose = false;
@@ -25,8 +28,17 @@
   };
 
   function loginAddEvent(){
+    $("#closeWinButton").on('click',function(event){
+      event.preventDefault();
+      ipc.send('closeChatWindow');
+    });
+    
+    $("#minWinButton").on('click',function(event){
+      event.preventDefault();
+      ipc.send('minChatWindow');
+    });
+    
     $("#login").on('click',function(){
-      debugger;
       socket.emit('getUser');
     });
 

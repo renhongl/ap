@@ -9,18 +9,22 @@
     <link rel="stylesheet" href="css/colpick.css">
     <link rel="stylesheet" href="css/leaflet.css">
     <link rel="stylesheet" href="css/jquery-ui.css">
-    
+    <link rel="stylesheet" href="../../css/lib/font-awesome/css/font-awesome.min.css">
     
   </head>
   <body id="body">
-    <div class="container">
+    <div class="container button">
       <div id="fontSetting" class="store"></div>
       <div id="imageStore" class="store"></div>
       <div id="musiceSetting" class="store"></div>
       <div id="settings"></div>
       <div id="mapDiv"></div>
       <div class="title">
-        <div id="appName">聊天室</div>
+        <i id="closeWinButton" class="fa fa-times button" aria-hidden="true"></i>
+        <i id="minWinButton" class="fa fa-minus button" aria-hidden="true"></i>
+        <div id="appName">
+          聊天室
+        </div>
         <div id="userList"><marquee id="test" scrollamount="2"></marquee></div>
       </div>
       <div id="alertMsg" class="alert alert-danger" role="alert" hidden="hidden"></div>

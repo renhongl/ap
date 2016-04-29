@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AP</title>
+    <link rel="stylesheet" href="../css/lib/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../css/controller/login.css">
 </head>
 
@@ -13,12 +14,15 @@
     <div class="htmleaf-container">
         <div class="wrapper">
             <div class="container">
-                <h1>Welcome</h1>
-
+                <div class="header">
+                    <i id="closeButton" class="fa fa-times button" aria-hidden="true" style="margin-right:10px;"></i>
+                    <i id="minButton" class="fa fa-minus button" aria-hidden="true"></i>
+                </div>
+                <h1>Application Flatform</h1>
                 <form class="form">
-                    <input type="text" id="email" value="1075220132@qq.com">
-                    <input type="password" id="password" value="123456">
-                    <button type="submit" id="login-button">Login</button>
+                    <input type="text" id="email" value="1075220132@qq.com" class="button">
+                    <input type="password" id="password" value="123456" class="button">
+                    <button type="submit" id="login-button" class="button">Login</button>
                 </form>
             </div>
 
@@ -37,14 +41,8 @@
         </div>
     </div>
 
-    <script>
-        window.$ = window.jQuery = require("../js/lib/jquery.js");
-        $('#login-button').click(function(event) {
-            event.preventDefault();
-            $('form').fadeOut(500);
-            $('.wrapper').addClass('form-success');
-        });
-    </script>
+    <script>window.$ = window.jQuery = require("../js/lib/jquery.js");</script>
+    <script src="../js/controller/url.js"></script>
     <script src="../js/controller/login.js"></script>
 </body>
 

@@ -4,17 +4,31 @@ const electron = require('electron');
 const ipc = electron.ipcMain;
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
-const globalShortcut = require('global-shortcut');
 
 let mainWindow = null;
-let settingsWindow = null;
+let chatRoomWindow = null;
 
-ipc.on('closeWindow',function(){
-   app.quit();
+
+ipc.on('closeMainWindow', function () {
+  app.quit();
 });
 
-ipc.on('minusWindow',function(){
-   mainWindow.minimize();
+ipc.on('minMainWindow', function () {
+  mainWindow.minimize();
+});
+
+ipc.on('closeChatWindow', function () {
+  chatRoomWindow.close();
+});
+
+ipc.on('minChatWindow', function () {
+  chatRoomWindow.minimize();
+});
+
+ipc.on('openChatRoom', function () {
+  if (chatRoomWindow === null) {
+    createChatRoomWindow();
+  }
 });
 
 app.on('ready', createWindow);
@@ -25,8 +39,8 @@ app.on('window-all-closed', function () {
   }
 });
 
-app.on('will-quit', function() {
-  globalShortcut.unregisterAll();
+app.on('will-quit', function () {
+
 });
 
 app.on('activate', function () {
@@ -35,19 +49,38 @@ app.on('activate', function () {
   }
 });
 
-function createWindow () {
+function createChatRoomWindow() {
+  chatRoomWindow = new BrowserWindow({
+    frame: false,
+    height: 506,
+    resizable: false,
+    width: 375
+  });
+  
+  chatRoomWindow.loadURL('http://localhost:8999/module/chatClient');
+  
+  //chatRoomWindow.openDevTools();
+  
+  chatRoomWindow.on('closed', function () {
+    chatRoomWindow = null;
+  });
+}
+
+function createWindow() {
 
   mainWindow = new BrowserWindow({
-      width: 800,
-      height: 600,
-      frame: true,
-      resizable: false,
-      icon: ('app/images/qq.ico')
-    });
+    width: 800,
+    height: 600,
+    frame: false,
+    resizable: false,
+    icon: ('app/images/qq.ico')
+  });
 
   mainWindow.loadURL('file://' + __dirname + '/AP/html/login.html');
 
-  mainWindow.on('closed', function() {
+  //mainWindow.openDevTools();
+
+  mainWindow.on('closed', function () {
     mainWindow = null;
   });
 

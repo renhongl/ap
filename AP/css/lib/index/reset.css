@@ -30,6 +30,13 @@ body {
 	line-height:1;
 }
 
+html,body {
+    -webkit-app-region: drag;
+}
+.button{
+    -webkit-app-region: no-drag;
+}
+
 article, aside, dialog, figure, footer, header, 
 hgroup, nav, section { 
 	display:block;

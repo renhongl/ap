@@ -1,4 +1,8 @@
 (function(){
+    'use strict';
+    var electron = require('electron');
+    var ipc = electron.ipcRenderer;
+    
     class Login{
         static init(){
             console.log("login");
@@ -7,10 +11,23 @@
     }
     
     function addEventListener(){
-        $("#login-button").on('click',() => {
+        $("#login-button").on('click',function(event){
+            event.preventDefault();
             var email = $("#email").val();
             var password = $("#password").val();
+            $('form').fadeOut(500);
+            $('.wrapper').addClass('form-success');
             verifyLogin(email,password);
+        });
+        
+        $("#closeButton").on('click',function(event){
+            event.preventDefault();
+            ipc.send('closeMainWindow');
+        });
+        
+        $("#minButton").on('click',function(event){
+            event.preventDefault();
+           ipc.send('minMainWindow');
         });
     }
     
@@ -21,13 +38,14 @@
         };
         $.ajax({
            type : "post",
-           url : "http://localhost:8999/verifyLogin",
+           url : URL.verifyLogin,
            data : postData,
            success : function(result){
                if(result){
                    goToIndex();
                }else{
                    alert("Email or Password is invalid");
+                   location.reload();
                }
            },
            error(err){

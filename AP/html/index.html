@@ -7,13 +7,19 @@
     <link rel="stylesheet" href="../css/lib/index/reset.css" media="screen" />
     <link rel="stylesheet" href="../css/lib/index/style.css" media="screen" />
     <link rel="stylesheet" href="../css/lib/index/css3_3d.css" media="screen" />
+    <link rel="stylesheet" href="../css/lib/font-awesome/css/font-awesome.min.css">
 </head>
 
 <body>
+    <div class="header">
+        <span id="indexTitle">Application Platform</span>
+        <i id="closeButton" class="fa fa-times button" aria-hidden="true" style="margin-right:10px;"></i>
+        <i id="minButton" class="fa fa-minus button" aria-hidden="true"></i>
+    </div>
     <div id="container">
         <div style="text-align:center;clear:both">
         </div>
-        <ul id="grid" class="group">
+        <ul id="grid" class="group button">
             <li>
                 <div class="details">
                     <h3>ChatRoom</h3>
@@ -59,6 +65,7 @@
         </ul>
     </div>
     <script>window.$ = window.jQuery = require("../js/lib/jquery.js");</script>
+    <script src="../js/controller/url.js"></script>
     <script src="../js/controller/index.js"></script>
 </body>
 

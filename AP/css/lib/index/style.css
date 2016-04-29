@@ -27,7 +27,7 @@ body { background: #53E3A6 url(); font-family: Arial, Helvetica, sans-serif; }
 
 }
 
-#container { width: 600px; padding: 0 20px; margin: 0 auto; }
+#container { width: 600px; padding: 0 20px; margin: 0 auto; margin-top:100px;}
 
 #header { height: 36px; background: url(../images/bluesquares.gif); position: relative; }
 #header a.g3d { background: url(../images/g3dlabs.png); text-indent: -9999px; width: 145px; height: 50px; display: block; position: absolute; left: 12px; top: 4px; }
@@ -46,6 +46,34 @@ p:last-of-type { margin-bottom: 0px; }
 #carbonads-container { margin: 0 auto 50px; width: 300px;  }
 #carbonads-container .carbonad .carbonad-tag { text-align: left !important; }
 
+.header{
+  width: 100%;
+  color: white;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  border: 0px solid red;
+  height: 30px;
+  top: 0;
+}
 
+.header i{
+  width: 20px;
+  height: 20px;
+  float:right;
+  margin:5px;
+  border: 0px solid red;
+}
 
+.header i:hover{
+  opacity:0.5;
+}
 
+#indexTitle{
+  font-size: 20px;
+  font-weight: 200;
+  margin-left:300px;
+  line-height:30px;
+  font-family:Arial,Verdana,Sans-serif;
+  text-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+}

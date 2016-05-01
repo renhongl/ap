@@ -4,9 +4,12 @@ const electron = require('electron');
 const ipc = electron.ipcMain;
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
+const dialog = electron.dialog;
+  
 
 let mainWindow = null;
 let chatRoomWindow = null;
+let musicPlayerWindow = null;
 
 
 ipc.on('closeMainWindow', function () {
@@ -26,9 +29,29 @@ ipc.on('minChatWindow', function () {
 });
 
 ipc.on('openChatRoom', function () {
-  if (chatRoomWindow === null) {
-    createChatRoomWindow();
+  // if (chatRoomWindow === null) {
+  //   createChatRoomWindow();
+  // }
+  createChatRoomWindow();
+});
+
+ipc.on('openMusicFolder',function(){
+  var path = dialog.showOpenDialog({ properties: [ 'openFile', 'openDirectory', 'multiSelections' ]});
+  musicPlayerWindow.webContents.send('loadedFolder', path);
+});
+
+ipc.on('openMusicPlayer', function () {
+  if (musicPlayerWindow === null) {
+    createMusicPlayerWindow();
   }
+});
+
+ipc.on('closePlayerWindow', function () {
+  musicPlayerWindow.close();
+});
+
+ipc.on('minPlayerWindow', function () {
+  musicPlayerWindow.minimize();
 });
 
 app.on('ready', createWindow);
@@ -48,6 +71,23 @@ app.on('activate', function () {
     createWindow();
   }
 });
+
+function createMusicPlayerWindow() {
+  musicPlayerWindow = new BrowserWindow({
+    frame: false,
+    height: 450,
+    resizable: false,
+    width: 600
+  });
+  
+  musicPlayerWindow.loadURL('file://' + __dirname + '/AP/module/player/index.html');
+  
+  //musicPlayerWindow.openDevTools();
+  
+  musicPlayerWindow.on('closed', function () {
+    musicPlayerWindow = null;
+  });
+}
 
 function createChatRoomWindow() {
   chatRoomWindow = new BrowserWindow({

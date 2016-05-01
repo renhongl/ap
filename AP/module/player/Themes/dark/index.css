@@ -1,0 +1,231 @@
+#toDrag{
+  border:0px solid red;
+  -webkit-user-select:none;
+  -webkit-app-region:drag;
+}
+
+#body{
+  width:600px;height:450px;background-color:#181818;margin:0px;padding:0px;position:relative;
+}
+
+#container{
+  border:0px solid gray;width:600px;height:450px;margin:0px;
+}
+
+.clickedList{
+  color:white;
+}
+
+.jqx-fill-state-pressed{
+  background-color:red;
+}
+
+#list .playing{
+  color:red;
+}
+
+#list div{
+  overflow:hidden;height:15px;
+}
+
+#list span:hover{
+  color:white;font-size:15px;
+}
+
+#list span{
+  font-size:15px;
+}
+
+#foot span:hover{
+  color:white;
+}
+
+#pause:hover{
+  border:1px solid white;
+}
+
+#foot span{
+
+}
+
+#header span:hover{
+  color:white;
+}
+
+#list div:hover{
+  color:white;
+  cursor:default;
+}
+
+#nabar:hover{
+  color:white;
+}
+
+#upload:hover{
+  color:black;
+}
+
+#configWindow input{
+  margin-top: 10px;
+}
+
+.music{
+  margin-top:5px;
+}
+
+.theme1{
+  background-color:#53e3a6;
+}
+
+.sub1{
+  border-bottom:2px solid gray;
+}
+
+
+#header{
+  color:gray;height:20px;width:100%;border-bottom:2px solid gray;margin-top:5px;
+}
+
+#showList{
+  width:15%;height:375px;border-bottom:2px solid gray;float:left;border-right:2px solid gray;
+}
+
+#nabar{
+  border-bottom:2px solid gray;height:30px;font-size:12px;
+}
+
+#showImage{
+  width:85%;height:375px;border-bottom:2px solid gray;float:left;color:white;
+}
+
+#configWindow{
+  color:white;position:absolute;left:150px;top:50px;width:300px;height:200px;border-radius:5px;border:1px solid gray;box-shadow:4px 4px 4px rgba(0,0,0,0.5);
+}
+
+.confTheme{
+  background-color:#181818;
+}
+
+#logo{
+  display:inline-block;float:left;color:white;
+}
+
+#toDrag{
+  width:85%;height:20px;float:left;margin-left:5px;
+}
+
+#close{
+  display:inline-block;float:right;
+}
+
+#minimize{
+  display:inline-block;float:right;margin-right:5px;
+}
+
+#config{
+  display:inline-block;float:right;margin-right:5px;
+}
+
+#main{
+  width:100%;height:375px;
+}
+
+#nabarTitle{
+  display:inline-block;margin-top:5px;margin-left:5px;
+}
+
+#list{
+  font-size:11px;overflow:hidden;height:347px;color:gray;
+}
+
+#showMusicName{
+  height:350px;width:100%;text-align:center;color:red;border:0px solid red;margin-top:10px;position:relative;
+}
+
+#musicName{
+  height:30px;width:100%;text-align:center;position:absolute;top:100px;
+}
+
+/*@-webkit-keyframes nameShow
+{
+0%   {color: red;}
+25%  {color: yellow;}
+50%  {color: blue;}
+100% {color: green;}
+}
+
+#showMusicName{
+  -webkit-animation-name: nameShow;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-iteration-count: infinite;
+}*/
+
+#foot{
+  width:100%;height:40px;margin-top:5px;color:gray;border:0px solid red;
+}
+
+#control1{
+  height:40px;float:left;
+}
+
+#last{
+  font-size:20px;margin-top:5px;
+}
+
+#pause{
+  font-size:20px;display:inline-block;border:1px solid;border-radius:10px;padding-bottom:1px;
+}
+
+#next{
+  font-size:20px;
+}
+
+#control2{
+  height:40px;float:right;margin-top:3px;margin-left:10px;
+}
+
+#control3{
+  height:40px;float:left;padding-left:15px;border:0px solid red;
+}
+
+#showTime{
+  float:left;margin-top:7px;
+}
+
+#volumeControl{
+  position:fixed;top:278px;left:522px;background-color:#121212;height:120px;width:30px;display:none;
+}
+
+#changeVolume{
+  margin:10px; 5px;
+}
+
+#turnUp{
+  font-size:20px;display:inline-block;margin-left:7px;margin-top:6px;
+}
+
+#order{
+  font-size:15px;display:inline-block;margin-left:3px;margin-bottom:10px;
+}
+
+#repeatDiv{
+  float:right;border:0px solid red;padding-left:5px;padding-top:9px;
+}
+
+#lastPage{
+  diaplay:inline-block;margin-left:0px;
+}
+
+#nextPage{
+  diaplay:inline-block;margin-left:40px;
+}
+
+
+
+
+
+
+
+
+
+///

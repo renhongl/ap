@@ -11,8 +11,11 @@
     
     function addEventListener(){
         $("#chatRoomLink").on('click',function(){
-            var url = URL.chatClient;
             ipc.send('openChatRoom');
+        });
+        
+        $("#musicPlayerLink").on('click',function(){
+            ipc.send('openMusicPlayer');
         });
         
         $("#closeButton").on('click',function(event){

@@ -1,0 +1,25 @@
+{
+    "name": "player",
+    "main": "player/index.html",
+    "nodejs":true,
+
+    "window": {
+
+        "title": "player",
+        "toolbar": false,
+        "icon" : "logo.png",
+        "width": 600,
+        "height": 450,
+        "resizable":false,
+        "show_in_taskbar":true,
+        "frame":false,
+        "kiosk":false
+    },
+
+    "webkit":{
+
+        "plugin":true
+
+    }
+
+}

@@ -4,7 +4,7 @@ Float clearing goodness from Handcrafted CSS book ------------------------------
 * html .group { height: 1%; }
 *:first-child+html .group { min-height: 1px; }
 
-body { background: #53E3A6 url(); font-family: Arial, Helvetica, sans-serif; }
+body { background: white url(); font-family: Arial, Helvetica, sans-serif; }
 
 @font-face {
     /*font-family: 'BonvenoCFLight';
@@ -53,8 +53,9 @@ p:last-of-type { margin-bottom: 0px; }
   z-index: 100;
   left: 0;
   border: 0px solid red;
-  height: 30px;
+  height: 40px;
   top: 0;
+  background:#53E3A6;
 }
 
 .header i{
@@ -63,6 +64,7 @@ p:last-of-type { margin-bottom: 0px; }
   float:right;
   margin:5px;
   border: 0px solid red;
+  margin-top:10px;
 }
 
 .header i:hover{
@@ -73,7 +75,7 @@ p:last-of-type { margin-bottom: 0px; }
   font-size: 20px;
   font-weight: 200;
   margin-left:300px;
-  line-height:30px;
+  line-height:40px;
   font-family:Arial,Verdana,Sans-serif;
   text-shadow: 5px 5px 5px rgba(0,0,0,0.5);
 }

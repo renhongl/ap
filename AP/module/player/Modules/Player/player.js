@@ -76,7 +76,7 @@
     $("#configWindow").append('<div style="height:25px;border-bottom:1px solid gray;line-height:25px;padding:3px;">' +
     '设置<span id="closeConfig" class="glyphicon glyphicon-remove" aria-hidden="true" style="display:inline-block;float:right;"></span></div>');
     $("#configWindow").append('<div style="padding:10px;">' +
-    '<input id="musicPath" type="text" class="form-control" placeholder="音乐目录" style="width:56%;float:left;"><input id="selectFloder" type="button" class="form-control" value="选择目录" style="width:40%;float:left;margin-left:10px;"/>'+
+    '<input id="musicPath" type="text" class="form-control" placeholder="音乐目录" style="width:66%;float:left;"><input id="selectFloder" type="button" class="form-control" value="文件夹" style="width:30%;float:left;margin-left:10px;"/>'+
     '<select class="form-control" id="themeNumber" style="margin-top:5px;float:left;clear:both;">'+
     '<option>主题</option>'+
     '<option>0</option>'+

@@ -11,7 +11,8 @@
     
     function addEventListener(){
         $("#chatRoomLink").on('click',function(){
-            ipc.send('openChatRoom');
+            var url = URL.chatClient;
+            ipc.send('openChatRoom',url);
         });
         
         $("#musicPlayerLink").on('click',function(){

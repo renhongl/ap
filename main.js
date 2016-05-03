@@ -10,13 +10,31 @@
   let mainWindow = null;
   let chatRoomWindow = null;
   let musicPlayerWindow = null;
+  let fishWindow = null;
 
   let initWindow = function () {
     addMainEvent();
     addChatEvent();
     addMusicEvent();
     addAppEvent();
+    addFishEvent();
   };
+  
+  function addFishEvent(){
+    ipc.on('openFishWindow', function () {
+      if (fishWindow === null) {
+        createFishWindow();
+      }
+    });
+
+    ipc.on('closeFishWindow', function () {
+      fishWindow.close();
+    });
+
+    ipc.on('minFishWindow', function () {
+      fishWindow.minimize();
+    });
+  }
 
   function addMainEvent() {
     ipc.on('closeMainWindow', function () {
@@ -92,6 +110,23 @@
       if (mainWindow === null) {
         createWindow();
       }
+    });
+  }
+  
+  function createFishWindow() {
+    fishWindow = new BrowserWindow({
+      frame: false,
+      height: 600,
+      resizable: false,
+      width: 800
+    });
+
+    fishWindow.loadURL('file://' + __dirname + '/AP/module/loveFish/index.html');
+
+    fishWindow.openDevTools();
+
+    fishWindow.on('closed', function () {
+      fishWindow = null;
     });
   }
 

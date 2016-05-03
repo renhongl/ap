@@ -19,6 +19,10 @@
             ipc.send('openMusicPlayer');
         });
         
+        $("#loveFishLink").on('click',function(){
+            ipc.send('openFishWindow');
+        });
+        
         $("#closeButton").on('click',function(event){
             event.preventDefault();
             ipc.send('closeMainWindow');

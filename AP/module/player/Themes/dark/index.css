@@ -5,11 +5,11 @@
 }
 
 #body{
-  width:600px;height:450px;background-color:#181818;margin:0px;padding:0px;position:relative;
+  width:600px;height:450px;background-color:#0099FF;margin:0px;padding:0px;position:relative;
 }
 
 #container{
-  border:0px solid gray;width:600px;height:450px;margin:0px;
+  border:0px solid #99FFCC;width:600px;height:450px;margin:0px;
 }
 
 .clickedList{
@@ -17,44 +17,52 @@
 }
 
 .jqx-fill-state-pressed{
-  background-color:red;
+  background-color:#99FFCC;
 }
 
 #list .playing{
-  color:red;
+  color:gray;
+  font-family:bold;
+  background: #99FFCC;
 }
 
 #list div{
   overflow:hidden;height:15px;
 }
 
-#list span:hover{
+/*#list span:hover{
   color:white;font-size:15px;
-}
+}*/
 
 #list span{
   font-size:15px;
+  color:#99FFCC;
 }
 
-#foot span:hover{
+#list span:hover{
+  white;
+}
+
+/*#foot span:hover{
   color:white;
-}
+}*/
 
-#pause:hover{
+/*#pause:hover{
   border:1px solid white;
-}
+}*/
 
-#foot span{
-
-}
-
-#header span:hover{
+/*#header span:hover{
   color:white;
-}
+}*/
 
 #list div:hover{
-  color:white;
+  color:gray;
   cursor:default;
+  background: #99FFCC;
+}
+
+#player span:hover{
+  color:white;
 }
 
 #nabar:hover{
@@ -78,32 +86,32 @@
 }
 
 .sub1{
-  border-bottom:2px solid gray;
+  border-bottom:2px solid #99FFCC;
 }
 
 
 #header{
-  color:gray;height:20px;width:100%;border-bottom:2px solid gray;margin-top:5px;
+  color:#99FFCC;height:20px;width:100%;border-bottom:2px solid white;margin-top:5px;
 }
 
 #showList{
-  width:15%;height:375px;border-bottom:2px solid gray;float:left;border-right:2px solid gray;
+  width:15%;height:375px;border-bottom:2px solid white;float:left;border-right:2px solid white;
 }
 
 #nabar{
-  border-bottom:2px solid gray;height:30px;font-size:12px;
+  border-bottom:2px solid white;height:30px;font-size:12px;
 }
 
 #showImage{
-  width:85%;height:375px;border-bottom:2px solid gray;float:left;color:white;
+  width:85%;height:375px;border-bottom:2px solid white;float:left;color:white;
 }
 
 #configWindow{
-  color:white;position:absolute;left:150px;top:50px;width:300px;height:200px;border-radius:5px;border:1px solid gray;box-shadow:4px 4px 4px rgba(0,0,0,0.5);
+  color:white;position:absolute;left:150px;top:50px;width:300px;height:200px;border-radius:5px;border:1px solid #99FFCC;box-shadow:4px 4px 4px rgba(0,0,0,0.5);
 }
 
 .confTheme{
-  background-color:#181818;
+  background-color:#0099FF;
 }
 
 #logo{
@@ -115,15 +123,64 @@
 }
 
 #close{
-  display:inline-block;float:right;
+  position: absolute;
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  right: 10px;
+  top: 0;
+  text-align: center;
+  line-height: 22px;
+}
+
+#closeConfig{
+  display: inline-block;
+  width: 25px;
+  height: 24px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-radius: 0 3px 0 0;
+  text-align: center;
+  line-height: 24px;
+}
+
+#closeConfig:hover{
+  background: #FF0033;
+}
+
+#close:hover{
+  background: #FF0033;
 }
 
 #minimize{
-  display:inline-block;float:right;margin-right:5px;
+  position: absolute;
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  right: 34px;
+  top: 0;
+  text-align: center;
+  line-height: 22px;
+}
+
+#minimize:hover{
+  background:#0099FF;
 }
 
 #config{
-  display:inline-block;float:right;margin-right:5px;
+  position: absolute;
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  right: 56px;
+  top: 0;
+  text-align: center;
+  line-height: 22px;
+}
+
+#config:hover{
+  background:#0099FF;
 }
 
 #main{
@@ -135,11 +192,11 @@
 }
 
 #list{
-  font-size:11px;overflow:hidden;height:347px;color:gray;
+  font-size:11px;overflow:hidden;height:347px;color:white;
 }
 
 #showMusicName{
-  height:350px;width:100%;text-align:center;color:red;border:0px solid red;margin-top:10px;position:relative;
+  height:350px;width:100%;text-align:center;color:white;border:0px solid red;margin-top:10px;position:relative;
 }
 
 #musicName{
@@ -161,7 +218,7 @@
 }*/
 
 #foot{
-  width:100%;height:40px;margin-top:5px;color:gray;border:0px solid red;
+  width:100%;height:40px;margin-top:5px;color:#99FFCC;border:0px solid red;
 }
 
 #control1{
@@ -173,7 +230,7 @@
 }
 
 #pause{
-  font-size:20px;display:inline-block;border:1px solid;border-radius:10px;padding-bottom:1px;
+  font-size:20px;display:inline-block;border:0px solid;border-radius:10px;padding-bottom:1px;
 }
 
 #next{
@@ -193,11 +250,11 @@
 }
 
 #volumeControl{
-  position:fixed;top:278px;left:522px;background-color:#121212;height:120px;width:30px;display:none;
+  position:fixed;top:278px;left:522px;background-color:white;height:120px;width:30px;display:none;
 }
 
 #changeVolume{
-  margin:10px; 5px;
+  margin:10px 11px;
 }
 
 #turnUp{
@@ -219,7 +276,6 @@
 #nextPage{
   diaplay:inline-block;margin-left:40px;
 }
-
 
 
 

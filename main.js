@@ -48,7 +48,14 @@
   function addMusicEvent() {
     ipc.on('openMusicFolder', function () {
       var path = dialog.showOpenDialog({
-        properties: ['openFile', 'openDirectory', 'multiSelections'],
+        title : "选择文件夹",
+        properties: [ 'openFile','openDirectory','multiSelections' ],
+        filters: [
+          { name: 'Images', extensions: ['jpg', 'png', 'gif'] },
+          { name: 'Movies', extensions: ['mkv', 'avi', 'mp4'] },
+          { name: 'Custom File Type', extensions: ['as'] },
+          { name: 'All Files', extensions: ['*'] }
+        ]
       });
       musicPlayerWindow.webContents.send('loadedFolder', path);
     });

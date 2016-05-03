@@ -7,9 +7,8 @@ var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 server.listen(8999);
 
-
 chat.init(express,app,server);
 getRequest.init(app,express);
-console.log("8999 listening");
+console.log("Server:localhost:8999 is listening...");
 
 

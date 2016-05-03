@@ -59,16 +59,25 @@ p:last-of-type { margin-bottom: 0px; }
 }
 
 .header i{
-  width: 20px;
-  height: 20px;
-  float:right;
-  margin:5px;
+  width: 29px;
+  height: 27px;
+  float: right;
+  margin: 0;
   border: 0px solid red;
-  margin-top:10px;
+  line-height: 24px;
+  color: #909090;
+  text-align: center;
 }
 
 .header i:hover{
-  opacity:0.5;
+  color:white;
+}
+
+#minButton:hover{
+  background:#0099FF;
+}
+#closeButton:hover{
+  background: #FF0033;
 }
 
 #indexTitle{

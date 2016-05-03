@@ -48,33 +48,51 @@
     $("#order").on('click',orderList);
     $("#submit").on('click',submitConf);
     $("#config").on('click',function(){
-      $("#configWindow").toggle();
+      $("#configWindow").fadeIn();
     });
     $("#closeConfig").on('click',function(){
-      $("#configWindow").hide();
+      $("#configWindow").fadeOut();
     });
   }
 
   function submitConf(){
-    $("#configWindow").hide();
+    $("#configWindow").fadeOut();
     conf.getDataPath = $("#musicPath").val();
     loadMusic();
     conf.themeNumber = $("#themeNumber").val();
     if(conf.themeNumber === "1"){
       $("#container").addClass("theme1");
       $("#configWindow").addClass("theme1");
-      $("#configWindow").removeClass("confTheme");
+      $("#configWindow").removeClass("confTheme");//#E0E0E0
+      $("#nabar").css("border-bottom","2px solid white");
+      $("#header").css("border-bottom","2px solid white");
+      $("#showImage").css("border-bottom","2px solid white");
+      $("#showList").css("border-bottom","2px solid white");
+      $(".sub1").css("border-bottom","2px solid white");
+      $("#showList").css("border-right","2px solid white");
+      $("#showTime").css("color","white");
+      
+      $("#volumeControl").css("background","white");
     }else if(conf.themeNumber === "0"){
       $("#container").removeClass("theme1");
       $("#configWindow").removeClass("theme1");
       $("#configWindow").addClass("confTheme");
+      $("#nabar").css("border-bottom","2px solid white");
+      $("#header").css("border-bottom","2px solid white");
+      $("#showImage").css("border-bottom","2px solid white");
+      $("#showList").css("border-bottom","2px solid white");
+      $(".sub1").css("border-bottom","2px solid white");
+      $("#showList").css("border-right","2px solid white");
+      $("#showTime").css("color","white");
+      
+      $("#volumeControl").css("background","white");
     }
   }
 
   function configPlay(){
     $("#body").append('<div hidden="hidden" id="configWindow" class="confTheme"></div>');
-    $("#configWindow").append('<div style="height:25px;border-bottom:1px solid gray;line-height:25px;padding:3px;">' +
-    '设置<span id="closeConfig" class="glyphicon glyphicon-remove" aria-hidden="true" style="display:inline-block;float:right;"></span></div>');
+    $("#configWindow").append('<div style="height:25px;border-bottom:1px solid white;line-height:17px;padding:3px;">' +
+    '设置<span id="closeConfig" class="glyphicon glyphicon-remove" aria-hidden="true"></span></div>');
     $("#configWindow").append('<div style="padding:10px;">' +
     '<input id="musicPath" type="text" class="form-control" placeholder="音乐目录" style="width:66%;float:left;"><input id="selectFloder" type="button" class="form-control" value="文件夹" style="width:30%;float:left;margin-left:10px;"/>'+
     '<select class="form-control" id="themeNumber" style="margin-top:5px;float:left;clear:both;">'+
@@ -193,6 +211,9 @@
         showList();
       }
     });
+    
+    // conf.data = conf.getDataPath;
+    // showList();
   }
 
   function showList(){

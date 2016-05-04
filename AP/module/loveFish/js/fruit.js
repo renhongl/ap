@@ -3,6 +3,8 @@ var Fruit = function(){
     this.y = [];
     this.num = 30;
     this.image = new Image();
+    this.blue = new Image();
+    this.orange = new Image();
     this.width = [];
     this.height = [];
     this.sp = [];
@@ -11,6 +13,8 @@ var Fruit = function(){
 }
 
 Fruit.prototype.init = function(){
+    this.orange.src = "image/fruit.png";
+    this.blue.src = "image/blue.png";
     for(var i = 0; i < this.num; i++){
         this.x[i] = ane.x[i];
         this.y[i] = canHeight - ane.length[i];
@@ -49,11 +53,10 @@ Fruit.prototype.draw = function(){
                 }
             }
             if(this.type[i] === "blue"){
-                this.image.src = "image/blue.png";
+                ctx1.drawImage(this.blue,this.x[i] - this.width[i] * 0.5,this.y[i] - this.height[i] * 0.5,this.width[i],this.height[i]);
             }else{
-                this.image.src = "image/fruit.png";
+                ctx1.drawImage(this.orange,this.x[i] - this.width[i] * 0.5,this.y[i] - this.height[i] * 0.5,this.width[i],this.height[i]);
             }
-            ctx1.drawImage(this.image,this.x[i] - this.width[i] * 0.5,this.y[i] - this.height[i] * 0.5,this.width[i],this.height[i]);
         }
     }
     ctx1.restore();
@@ -84,4 +87,8 @@ Fruit.prototype.monitor = function(){
             }
         }
     }
+}
+
+Fruit.prototype.dead = function(i){
+    this.alive[i] = false;
 }

@@ -116,7 +116,7 @@
   function createFishWindow() {
     fishWindow = new BrowserWindow({
       frame: false,
-      height: 600,
+      height: 630,
       resizable: false,
       width: 800
     });

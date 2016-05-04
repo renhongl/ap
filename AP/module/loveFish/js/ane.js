@@ -17,7 +17,7 @@ Ane.prototype.draw = function(){
     ctx1.save();
     for(var i = 0; i < this.num; i++){
         ctx1.beginPath();
-        ctx1.strokeStyle = "#FF00FF";
+        ctx1.strokeStyle = "#FF33CC";
         ctx1.lineWidth = 20;
         ctx1.globalAlpha = 0.7;
         ctx1.lineCap = "round";

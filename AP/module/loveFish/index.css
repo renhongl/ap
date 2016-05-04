@@ -1,0 +1,80 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.header {
+    -webkit-app-region: drag;
+}
+
+.button {
+    -webkit-app-region: no-drag;
+}
+
+.container {
+    width: 800px;
+    height: 600px;
+    position: relative;
+    top:30px;
+}
+
+#can1 {
+    position: absolute;
+    z-index: 0;
+}
+
+#can2 {
+    position: absolute;
+    z-index: 1;
+}
+
+.header {
+    width: 100%;
+    color: #909090;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    border: 0px solid red;
+    height: 30px;
+    top: 0;
+}
+
+.title{
+    width: 100%;
+    color: #909090;
+    position: fixed;
+    z-index: 99;
+    left: 0;
+    border: 0px solid red;
+    height: 30px;
+    top: 0;
+    text-align: center;
+    line-height: 30px;
+    color: black;
+    text-shadow: 4px 4px 4px;
+}
+
+.header i {
+    width: 31px;
+    height: 30px;
+    float: right;
+    margin: 0;
+    border: 0px solid red;
+    line-height: 30px;
+    text-align: center;
+}
+
+.header i:hover {
+    color: white;
+}
+
+#minButton:hover {
+    background: #0099FF;
+}
+
+#closeButton:hover {
+    background: #FF0033;
+}

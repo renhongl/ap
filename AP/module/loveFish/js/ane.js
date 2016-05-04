@@ -14,9 +14,10 @@ Ane.prototype.init = function(){
 }
 
 Ane.prototype.draw = function(){
+    ctx1.save();
     for(var i = 0; i < this.num; i++){
         ctx1.beginPath();
-        ctx1.strokeStyle = "red";
+        ctx1.strokeStyle = "#FF00FF";
         ctx1.lineWidth = 20;
         ctx1.globalAlpha = 0.7;
         ctx1.lineCap = "round";
@@ -24,4 +25,5 @@ Ane.prototype.draw = function(){
         ctx1.lineTo(this.x[i],canHeight - this.length[i]);
         ctx1.stroke();
     }
+    ctx1.restore();
 }

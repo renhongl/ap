@@ -6,7 +6,13 @@
     class Index{
         static init(){
             addEventListener();
+            initHeader();
         }
+    }
+    
+    function initHeader(){
+        $("#userName").html(sessionStorage.userName);
+        $("#userInfo").find("img").attr("src",sessionStorage.url);
     }
     
     function addEventListener(){

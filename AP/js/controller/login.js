@@ -41,8 +41,8 @@
            url : URL.verifyLogin,
            data : postData,
            success : function(result){
-               if(result){
-                   goToIndex();
+               if(result.code === 1){
+                   goToIndex(result.name,result.url);
                }else{
                    alert("Email or Password is invalid");
                    location.reload();
@@ -54,7 +54,9 @@
         });
     }
     
-    function goToIndex(){
+    function goToIndex(name,url){
+        sessionStorage.userName = name;
+        sessionStorage.url = url;
         location.href = location.href.replace(/login/,"index");
     }
     

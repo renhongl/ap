@@ -1,9 +1,10 @@
 {
     "users" :[
         {
-            "name" : "lrh",
+            "name" : "LiangRenHong",
             "email" : "1075220132@qq.com",
-            "password" : "123456"
+            "password" : "123456",
+            "url" : "../image/index/default.png"
         }
     ]
 }

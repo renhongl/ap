@@ -27,14 +27,23 @@ function verifyLogin(req,res){
         if(err){
             return console.log(err);
         }else{
-            var has = false;
+            var code = 0;
+            var name = "";
+            var url = "";
             var users = JSON.parse(data).users;
             users.forEach(function(user,i){
                 if(user.email === email && user.password === password){
-                    has = true;
+                    code = 1;
+                    name = user.name;
+                    url = user.url;
                 }
             });
-            res.send(has);
+            var sendData = {
+                name : name,
+                code : code,
+                url : url
+            };
+            res.send(sendData);
         }
     });
 }

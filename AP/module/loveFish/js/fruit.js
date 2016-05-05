@@ -10,14 +10,16 @@ var Fruit = function(){
     this.sp = [];
     this.alive = [];
     this.type = [];
+    this.aneID = [];
 }
 
 Fruit.prototype.init = function(){
     this.orange.src = "image/fruit.png";
     this.blue.src = "image/blue.png";
     for(var i = 0; i < this.num; i++){
-        this.x[i] = ane.x[i];
-        this.y[i] = canHeight - ane.length[i];
+        this.x[i] = ane.headX[i];
+        this.y[i] = ane.headY[i];
+        this.aneID[i] = 0;
     }
     for(var j = 0; j < this.num; j++){
         this.width[j] = 0.1;
@@ -31,7 +33,7 @@ Fruit.prototype.init = function(){
     }
     for(var m = 0; m < this.num; m++){
         var ran = Math.random();
-        if(ran < 0.2){
+        if(ran < 0.1){
             this.type[m] = "blue";
         }else{
             this.type[m] = "orange";
@@ -46,6 +48,8 @@ Fruit.prototype.draw = function(){
             if(this.width[i] <= 20){
                 this.width[i] += 0.01 * delTime;
                 this.height[i] += 0.01 * delTime;
+                this.x[i] = ane.headX[this.aneID[i]];
+                this.y[i] = ane.headY[this.aneID[i]];
             }else{
                 this.y[i] -= this.sp[i] * delTime;
                 if(this.y[i] < -10){
@@ -73,14 +77,14 @@ Fruit.prototype.monitor = function(){
         for(var j = 0; j < this.num; j++){
             if(!this.alive[j]){
                 this.alive[j] = true;
-                var aneID = Math.floor(Math.random() * 50);
-                if(aneID < 10){
+                this.aneID[j] = Math.floor(Math.random() * 50);
+                if(this.aneID[j] < 5){
                     this.type[j] = "blue";
                 }else{
                     this.type[j] = "orange";
                 }
-                this.x[j] = ane.x[aneID];
-                this.y[j] = canHeight - ane.length[aneID];
+                this.x[j] = ane.headX[this.aneID[j]];
+                this.y[j] = ane.headY[this.aneID[j]];
                 this.width[j] = 0.1;
                 this.height[j] = 0.1;
                 return;

@@ -5,12 +5,14 @@ var ipc = electron.ipcRenderer;
 var canWidth = document.getElementById("can1").width;
 var canHeight = document.getElementById("can1").height;
 var can1,can2,ctx1,ctx2;
-var background,ane,fruit,mom,baby;
+var background,ane,fruit,mom,baby,data,wave;
 var lastTime,delTime;
 var mx,my;
 
 var momTail = [];
 var momEye = [];
+var momBodyOrange = [];
+var momBodyBlue = [];
 
 var babyEye = [];
 var babyBody = [];
@@ -64,6 +66,19 @@ function init(){
         momEye[l] = new Image();
         momEye[l].src = "image/bigEye" + l + ".png";
     }
+    
+    data = new Data();
+    data.init();
+    
+    for(var m = 0; m < 8; m++){
+        momBodyOrange[m] = new Image();
+        momBodyOrange[m].src = "image/bigSwim" + m + ".png";
+        momBodyBlue[m] = new Image();
+        momBodyBlue[m].src = "image/bigSwimBlue" + m + ".png";
+    }
+    
+    wave = new Wave();
+    wave.init();
 }
 
 function gameLoop(){
@@ -89,11 +104,19 @@ function gameLoop(){
     momColisionFruit();
     
     baby.draw();
+    
+    momColisionBaby();
+    
+    data.draw();
+    
+    wave.draw();
 }
 
 function addEvent(e){
-    mx = e.layerX;
-    my = e.layerY;
+    if(!data.gameOver){
+        mx = e.layerX;
+        my = e.layerY;
+    }
 }
 
 function addWindowEvent(){

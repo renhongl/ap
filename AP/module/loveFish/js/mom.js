@@ -1,37 +1,22 @@
 var Mom = function(){
-    this.body = new Image();
-    this.eye = new Image();
-    this.tail = new Image();
-    
-    this.tailTimer;
-    this.tailCount;
-    
-    this.eyeTimer;
-    this.eyeCount;
-    
-    this.bodyCount;
-    
-    this.x;
-    this.y;
-    this.angle;
-}
-
-Mom.prototype.init = function(){
     this.x = canWidth * 0.5;
     this.y = canHeight * 0.5;
     this.angle = 0;
-    
     this.tailTimer = 0;
     this.tailCount = 0;
-    
     this.eyeTimer = 0;
     this.eyeCount = 0;
     this.eyeInterval = 3000;
-    
     this.bodyCount = 0;
+    this.eatTimer = 0;
+    this.endEat = 0;
+    this.eatNow = -1;
+    this.eatEnd = false;
+};
+
+Mom.prototype.init = function(){
     
-    this.body.src = "image/bigSwim0.png";
-}
+};
 
 Mom.prototype.draw = function(){
     this.x = lerpDistance(mx, this.x, 0.94);
@@ -59,17 +44,39 @@ Mom.prototype.draw = function(){
         }
     }
     
+    this.eatTimer += delTime;
+    
     ctx2.save();
     ctx2.translate(this.x,this.y);
     ctx2.rotate(this.angle + Math.PI);
     
     if(data.double === 1){
-        ctx2.drawImage(momBodyOrange[this.bodyCount],-momBodyOrange[this.bodyCount].width * 0.5,-momBodyOrange[this.bodyCount].height * 0.5);
+        if(this.eatTimer < this.endEat){
+            ctx2.drawImage(momEatOrange[this.bodyCount],-momEatOrange[this.bodyCount].width * 0.5,-momEatOrange[this.bodyCount].height * 0.5);
+        }else{
+            ctx2.drawImage(momBodyOrange[this.bodyCount],-momBodyOrange[this.bodyCount].width * 0.5,-momBodyOrange[this.bodyCount].height * 0.5);
+            this.eatEnd = true;
+        }
+        
     } else{
-        ctx2.drawImage(momBodyBlue[this.bodyCount],-momBodyBlue[this.bodyCount].width * 0.5,-momBodyBlue[this.bodyCount].height * 0.5);
+        if(this.eatTimer < this.endEat){
+            ctx2.drawImage(momEatBlue[this.bodyCount],-momEatBlue[this.bodyCount].width * 0.5,-momEatBlue[this.bodyCount].height * 0.5);
+        }else{
+            ctx2.drawImage(momBodyBlue[this.bodyCount],-momBodyBlue[this.bodyCount].width * 0.5,-momBodyBlue[this.bodyCount].height * 0.5);
+            this.eatEnd = true;
+        }
+    }
+    
+    if(this.eatEnd){
+        fruit.dead(this.eatNow);
     }
     
     ctx2.drawImage(momEye[this.eyeCount],-momEye[this.eyeCount].width * 0.5,-momEye[this.eyeCount].height * 0.5);
     ctx2.drawImage(momTail[this.tailCount],-momTail[this.tailCount].width * 0.5 + 30,-momTail[this.tailCount].height * 0.5);
     ctx2.restore();
-}
+};
+
+Mom.prototype.eat = function(i){
+    this.endEat = 200;
+    this.eatNow = i;
+};

@@ -1,14 +1,11 @@
 var Ane = function(){
     this.num = 50;
-    
     this.rootX = [];
     this.headX = [];
     this.headY = [];
     this.angle = 0;
-    
     this.amp = [];
-    
-}
+};
 
 Ane.prototype.init = function(){
     for(var i = 0; i < this.num; i++){
@@ -17,7 +14,7 @@ Ane.prototype.init = function(){
         this.angle[i] = 0;
         this.amp[i] = 30 + Math.random() * 30;
     }
-}
+};
 
 Ane.prototype.draw = function(){
     ctx1.save();
@@ -35,4 +32,4 @@ Ane.prototype.draw = function(){
         ctx1.stroke();
     }
     ctx1.restore();
-}
+};

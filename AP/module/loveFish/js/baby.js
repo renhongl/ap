@@ -1,32 +1,18 @@
 var Baby = function(){
-    this.x;
-    this.y;
-    this.angle;
-    this.body = new Image();
-    this.eye = new Image();
     this.tail = new Image();
-    
-    this.eyeTimer;
-    this.eyeCount;
-    this.eyeInterval;
-    
-    this.bodyTimer;
-    this.bodyCount;
-}
-
-Baby.prototype.init = function(){
     this.x = canWidth * 0.5 - 50;
     this.y = canHeight * 0.5 + 50;
     this.angle = 0;
-    this.tail.src = "image/babyTail0.png";
-    
     this.eyeTimer = 0;
     this.eyeCount = 0;
     this.eyeInterval = 3000;
-    
     this.bodyTimer = 0;
     this.bodyCount = 0;
-}
+};
+
+Baby.prototype.init = function(){
+    this.tail.src = "image/babyTail0.png";
+};
 
 Baby.prototype.draw = function(){
     this.x = lerpDistance(mom.x, this.x, 0.99);
@@ -65,4 +51,4 @@ Baby.prototype.draw = function(){
     ctx2.drawImage(babyEye[this.eyeCount],-babyEye[this.eyeCount].width * 0.5,-babyEye[this.eyeCount].height * 0.5);
     ctx2.drawImage(this.tail,-this.tail.width * 0.5 + 24,-this.tail.height * 0.5);
     ctx2.restore();
-}
+};

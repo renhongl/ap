@@ -6,8 +6,8 @@ var Background = function(){
 
 Background.prototype.init = function(){
     this.image.src = "image/background.jpg";
-}
+};
 
 Background.prototype.draw = function(){
     ctx1.drawImage(this.image,0,0,canWidth,canHeight);
-}
+};

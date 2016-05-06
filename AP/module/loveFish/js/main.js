@@ -8,12 +8,12 @@ var can1,can2,ctx1,ctx2;
 var background,ane,fruit,mom,baby,data,wave;
 var lastTime,delTime;
 var mx,my;
-
 var momTail = [];
 var momEye = [];
 var momBodyOrange = [];
 var momBodyBlue = [];
-
+var momEatOrange = [];
+var momEatBlue = [];
 var babyEye = [];
 var babyBody = [];
 
@@ -37,18 +37,18 @@ function init(){
     
     background = new Background();
     background.init();
-    
     ane = new Ane();
     ane.init();
-    
     fruit = new Fruit();
     fruit.init();
-    
     mom = new Mom();
     mom.init();
-    
     baby = new Baby();
     baby.init();
+    data = new Data();
+    data.init();
+    wave = new Wave();
+    wave.init();
     
     for(var i = 0; i < 8; i++){
         momTail[i] = new Image();
@@ -66,19 +66,16 @@ function init(){
         momEye[l] = new Image();
         momEye[l].src = "image/bigEye" + l + ".png";
     }
-    
-    data = new Data();
-    data.init();
-    
     for(var m = 0; m < 8; m++){
         momBodyOrange[m] = new Image();
         momBodyOrange[m].src = "image/bigSwim" + m + ".png";
         momBodyBlue[m] = new Image();
         momBodyBlue[m].src = "image/bigSwimBlue" + m + ".png";
+        momEatOrange[m] = new　Image();
+        momEatOrange[m].src = "image/bigEat" + m + ".png";
+        momEatBlue[m] = new Image();
+        momEatBlue[m].src = "image/bigEatBlue" + m + ".png";
     }
-    
-    wave = new Wave();
-    wave.init();
 }
 
 function gameLoop(){
@@ -93,22 +90,14 @@ function gameLoop(){
     ctx2.clearRect(0,0,canWidth,canHeight);
     
     background.draw();
-    
     ane.draw();
-    
     fruit.monitor();
     fruit.draw();
-    
     mom.draw();
-    
     momColisionFruit();
-    
     baby.draw();
-    
     momColisionBaby();
-    
     data.draw();
-    
     wave.draw();
 }
 
@@ -120,7 +109,6 @@ function addEvent(e){
 }
 
 function addWindowEvent(){
-    
     document.getElementById("closeButton").addEventListener('click',function(){
         ipc.send('closeFishWindow');
     });

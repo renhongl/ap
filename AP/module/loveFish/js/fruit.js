@@ -11,7 +11,7 @@ var Fruit = function(){
     this.alive = [];
     this.type = [];
     this.aneID = [];
-}
+};
 
 Fruit.prototype.init = function(){
     this.orange.src = "image/fruit.png";
@@ -39,7 +39,7 @@ Fruit.prototype.init = function(){
             this.type[m] = "orange";
         }
     }
-}
+};
 
 Fruit.prototype.draw = function(){
     ctx1.save();
@@ -64,7 +64,7 @@ Fruit.prototype.draw = function(){
         }
     }
     ctx1.restore();
-}
+};
 
 Fruit.prototype.monitor = function(){
     var aliveNum = 0;
@@ -91,8 +91,8 @@ Fruit.prototype.monitor = function(){
             }
         }
     }
-}
+};
 
 Fruit.prototype.dead = function(i){
     this.alive[i] = false;
-}
+};

@@ -2,27 +2,22 @@ var Data = function(){
     this.number = 0;
     this.double = 1;
     this.score = 0;
-    this.gameOver = true;
+    this.gameOver = false;
     this.a = 0;
     this.orange = new Image();
     this.blue = new Image();
     this.bgAudio = document.getElementById("bgm");
     this.eatAudio = document.getElementById("eat");
     this.feedAudio = document.getElementById("feed");
-    this.startImage = new Image();
-    this.started = false;
-    this.startButton = new Image();
 };
 
 Data.prototype.init = function(){
-    this.startImage.src = "image/cover.png";
     this.orange.src = "image/fruit.png";
     this.blue.src = "image/blue.png";
-    this.startButton.src = "image/play.png";
     document.getElementById("bgm").src = "audio/bgm.mp3";
     document.getElementById("eat").src = "audio/eat.wav";
     document.getElementById("feed").src = "audio/feed.wav";
-    this.bgAudio.play();
+    //this.bgAudio.play();
 };
 
 Data.prototype.getEventPosition = function(ev){
@@ -45,28 +40,19 @@ Data.prototype.draw = function(){
     ctx2.shadowColor = "white";
     
     if(this.gameOver){
-        if(this.started){
-            this.a += delTime * 0.0001;
-            if(this.a > 1){
-                this.a = 1;
-            }
-            ctx2.fillStyle = "rgba(255,255,255,"+ this.a +")";
-            ctx2.fillText("GAMEOVER",canWidth * 0.5,canHeight * 0.5);
-            this.bgAudio.pause();
-            ctx2.fillText("SCORE: " + this.score,canWidth * 0.5,60);
-            ctx2.fillText(this.number,canWidth * 0.5 + 13,canHeight - 40);
-            ctx2.drawImage(this.orange,canWidth * 0.5 - 20,canHeight - 40,30,30);
-            ctx2.drawImage(this.blue,canWidth * 0.5 + 20,canHeight - 40,30,30);
-        }else{
-            this.bgAudio.pause();
-            ctx2.drawImage(this.startImage,0,0,canWidth,canHeight);
-            ctx2.drawImage(this.startButton,canWidth * 0.5 - this.startButton.width * 0.5,canHeight * 0.5 - this.startButton.height * 0.5);
-            can2.addEventListener('click', function(e){
-                this.started = true;
-                this.gameOver = false;
-            }, false);
+        this.a += delTime * 0.0001;
+        if(this.a > 1){
+            this.a = 1;
         }
+        ctx2.fillStyle = "rgba(255,255,255,"+ this.a +")";
+        ctx2.fillText("GAMEOVER",canWidth * 0.5,canHeight * 0.5 - 50);
+        this.bgAudio.pause();
+        ctx2.fillText("SCORE: " + this.score,canWidth * 0.5,60);
+        ctx2.fillText(this.number,canWidth * 0.5 + 13,canHeight - 40);
+        ctx2.drawImage(this.orange,canWidth * 0.5 - 20,canHeight - 40,30,30);
+        ctx2.drawImage(this.blue,canWidth * 0.5 + 20,canHeight - 40,30,30);
     }else{
+        this.bgAudio.play();
         ctx2.fillText("SCORE: " + this.score,canWidth * 0.5,60);
         ctx2.fillText(this.number,canWidth * 0.5 + 13,canHeight - 40);
         ctx2.drawImage(this.orange,canWidth * 0.5 - 20,canHeight - 40,30,30);

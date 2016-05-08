@@ -78,3 +78,7 @@ body {
 #closeButton:hover {
     background: #FF0033;
 }
+
+#palyGame:hover{
+    background: #0099FF;
+}

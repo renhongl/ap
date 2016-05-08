@@ -115,6 +115,9 @@ function addWindowEvent(){
     document.getElementById("minButton").addEventListener('click',function(){
         ipc.send('minFishWindow');
     });
+    document.getElementById("palyGame").addEventListener('click',function(){
+        location.reload();
+    });
 }
 
 document.body.onload = game;

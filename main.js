@@ -123,7 +123,7 @@
 
     fishWindow.loadURL('file://' + __dirname + '/AP/module/loveFish/index.html');
 
-    fishWindow.openDevTools();
+    //fishWindow.openDevTools();
 
     fishWindow.on('closed', function () {
       fishWindow = null;

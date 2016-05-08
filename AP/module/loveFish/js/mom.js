@@ -77,6 +77,6 @@ Mom.prototype.draw = function(){
 };
 
 Mom.prototype.eat = function(i){
-    this.endEat = 200;
+    this.endEat = 100;
     this.eatNow = i;
 };

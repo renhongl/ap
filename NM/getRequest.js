@@ -16,8 +16,7 @@ var getRequest = function () {
     app.use(express.static(__dirname.split("NM")[0] + 'AP'));
     app.get('/',root);
     app.post('/verifyLogin',verifyLogin);
-    
-}
+};
 
 function verifyLogin(req,res){
     var email = req.body.email;
@@ -60,4 +59,4 @@ exports.init = function (serverApp, serverExpress) {
     app = serverApp;
     express = serverExpress;
     getRequest();
-}
+};

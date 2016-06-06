@@ -166,6 +166,7 @@
 
   function createWindow() {
     mainWindow = new BrowserWindow({
+      title: "AP",
       width: 800,
       height: 600,
       frame: false,

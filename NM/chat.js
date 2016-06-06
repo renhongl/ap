@@ -1,3 +1,6 @@
+/**
+ * For chatRoom webcocket connection
+ */
 var express,app,server;
 
 function createWs(){

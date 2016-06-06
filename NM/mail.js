@@ -1,3 +1,7 @@
+/**
+ * An email tool
+ */
+
 var nodemailer = require('nodemailer');
 
 var transporter = nodemailer.createTransport({

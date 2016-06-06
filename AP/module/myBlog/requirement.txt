@@ -1,0 +1,12 @@
+API: Using nodejs frameword express
+DB: Json file(Maybe changing to MongoDB later)
+Reponsive Design: Bootstrap
+CRUD: Angularjs
+Core: Javascript
+
+
+Basic Function:
+0. Login and register
+1. List and write article
+2. List and write comment
+3. Upload image
